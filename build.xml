@@ -100,11 +100,11 @@
 	<target name="test" depends="compile-tests" description="Run unit test">
 
 		<junit printsummary="true" haltonfailure="true">
-		  <classpath refid="test.classpath" />
+			<classpath refid="test.classpath" />
 			<formatter type="plain" />
 			<test name="net.catosplace.junit.sandbox.categories.NoClassCategoryTest" />
 		</junit>
-		
+
 	</target>
 
 </project>
