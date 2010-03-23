@@ -10,8 +10,8 @@
 <project name="JUnit-Categories-Sandbox" default="default">
 
 	<description>
-            Build and test JUnit Categories Sandbox code
-  </description>
+	  Build and test JUnit Categories Sandbox code
+	</description>
 
 	<property name="src.dir" location="src" />
 	<property name="build.dir" location="build" />
@@ -97,7 +97,7 @@
 	<!-- - - - - - - - - - - - - - - - - - 
           target: test                      
          - - - - - - - - - - - - - - - - - -->
-	<target name="test" depends="compile-tests" description="Run unit test">
+	<target name="test" depends="compile-tests" description="Run unit tests">
 
 		<junit printsummary="true" haltonfailure="true">
 			<classpath refid="test.classpath" />
