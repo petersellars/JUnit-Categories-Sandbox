@@ -9,6 +9,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @IncludeCategory(UnitTests.class)
 @SuiteClasses( { NoClassCategoryTest.class,
 				 ClassCategoryTest.class,
+				 IntegrationClassCategoryTest.class,
 				 MethodCategoryTest.class } )
 public class UnitTestCategoryTestSuite {
 

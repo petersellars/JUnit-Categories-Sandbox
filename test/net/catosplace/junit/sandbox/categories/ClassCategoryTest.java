@@ -31,12 +31,12 @@ public class ClassCategoryTest {
 	final Logger logger = LoggerFactory.getLogger(ClassCategoryTest.class);
 	
 	@Test
-	public void testA() {
+	public void testUnitTestClassCategoryA() {
 		
 	}
 	
 	@Test
-	public void testB() {
+	public void testUnitTestClassCategoryB() {
 
 	}
 }

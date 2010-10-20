@@ -31,19 +31,19 @@ public class MethodCategoryTest {
 	
 	@Category(UnitTests.class)
 	@Test
-	public void testA() {
+	public void testUnitTestMethodCategory() {
 		
 	}
 	
 	@Category(IntegrationTests.class)
 	@Test
-	public void testB() {
+	public void testIntegrationTestMethodCategory() {
 
 	}
 	
 	@Category(DBIntegrationTests.class)
 	@Test
-	public void testC() {
+	public void testDBIntegrationTestMethodCategory() {
 
 	}
 }

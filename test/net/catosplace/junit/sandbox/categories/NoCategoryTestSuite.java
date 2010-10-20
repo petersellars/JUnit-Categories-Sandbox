@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Categories.class)
 @SuiteClasses( { NoClassCategoryTest.class, 
 				 ClassCategoryTest.class,
+				 IntegrationClassCategoryTest.class,
 				 MethodCategoryTest.class } )
 public class NoCategoryTestSuite {
 

@@ -5,6 +5,7 @@ package net.catosplace.junit.sandbox.categories;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.rules.MethodRule;
 import org.junit.rules.TestWatchman;
 import org.junit.runners.model.FrameworkMethod;
@@ -12,12 +13,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Test class that does not have a class level category.\
+ * Test class that has a class level category.
  * 
  * @author Peter Sellars
  * 
  */
-public class NoClassCategoryTest {
+@Category(IntegrationTests.class)
+public class IntegrationClassCategoryTest {
 
 	
 	@Rule public MethodRule watchman = new TestWatchman() {
@@ -26,15 +28,21 @@ public class NoClassCategoryTest {
 		}
 	};
 	
-	final Logger logger = LoggerFactory.getLogger(NoClassCategoryTest.class);
+	final Logger logger = LoggerFactory.getLogger(IntegrationClassCategoryTest.class);
 	
 	@Test
-	public void testNoCategoryA() {
+	public void testIntegrationTestClassCategoryA() {
 		
 	}
 	
 	@Test
-	public void testNoCategoryB() {
+	public void testIntegrationTestClassCategoryB() {
+
+	}
+	
+	@Category(DBIntegrationTests.class)
+	@Test
+	public void testIntegrationTestClassDBIntegrationMethodCategoryB() {
 
 	}
 }
