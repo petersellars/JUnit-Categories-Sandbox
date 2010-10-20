@@ -102,10 +102,12 @@
 		<junit printsummary="true" haltonfailure="true">
 			<classpath refid="test.classpath" />
 			<formatter type="plain" />
-			<!-- <test name="net.catosplace.junit.sandbox.categories.NoClassCategoryTest" /> -->
+			<test name="net.catosplace.junit.sandbox.categories.NoClassCategoryTest" />
 		  <test name="net.catosplace.junit.sandbox.categories.NoCategoryTestSuite" />
 		  <test name="net.catosplace.junit.sandbox.categories.UnitTestCategoryTestSuite" />
 		  <test name="net.catosplace.junit.sandbox.categories.IntegrationTestCategoryTestSuite" />
+      <test name="net.catosplace.junit.sandbox.categories.IntegrationTestNoDBCategoryTestSuite" />
+      <test name="net.catosplace.junit.sandbox.categories.ExperimentalCategoryTestSuite" />
 		</junit>
 
 	</target>
