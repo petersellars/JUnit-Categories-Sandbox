@@ -19,6 +19,9 @@
 
 	<property name="build.classes.dir" location="${build.dir}/classes" />
 	<property name="test.classes.dir" location="${build.dir}/test-classes" />
+  
+  <property name="test.reports.dir" location="reports/test"/>
+  <property name="test.reports.html.dir" location="reports/test/html"/>
 
 	<property name="lib" location="lib" />
 
@@ -90,6 +93,7 @@
 
 		<mkdir dir="${build.classes.dir}" />
 		<mkdir dir="${test.classes.dir}" />
+	  <mkdir dir="${test.reports.dir}" />
 
 	</target>
 
@@ -99,17 +103,36 @@
          - - - - - - - - - - - - - - - - - -->
 	<target name="test" depends="compile-tests" description="Run unit tests">
 
-		<junit printsummary="true" haltonfailure="true">
+		<junit printsummary="true"
+		  errorProperty="test.failed"
+		  failureproperty="test.failed">
 			<classpath refid="test.classpath" />
-			<formatter type="plain" />
-			<test name="net.catosplace.junit.sandbox.categories.NoClassCategoryTest" />
-		  <test name="net.catosplace.junit.sandbox.categories.NoCategoryTestSuite" />
-		  <test name="net.catosplace.junit.sandbox.categories.UnitTestCategoryTestSuite" />
-		  <test name="net.catosplace.junit.sandbox.categories.IntegrationTestCategoryTestSuite" />
-      <test name="net.catosplace.junit.sandbox.categories.IntegrationTestNoDBCategoryTestSuite" />
-      <test name="net.catosplace.junit.sandbox.categories.ExperimentalCategoryTestSuite" />
+			<formatter type="plain" usefile="false"/>
+		  <formatter type="xml" />
+			<test todir="${test.reports.dir}" 
+			  name="net.catosplace.junit.sandbox.categories.NoClassCategoryTest" />
+		  <test todir="${test.reports.dir}" 
+		    name="net.catosplace.junit.sandbox.categories.NoCategoryTestSuite" />
+		  <test todir="${test.reports.dir}" 
+		    name="net.catosplace.junit.sandbox.categories.UnitTestCategoryTestSuite" />
+		  <test todir="${test.reports.dir}" 
+		    name="net.catosplace.junit.sandbox.categories.IntegrationTestCategoryTestSuite" />
+      <test todir="${test.reports.dir}" 
+        name="net.catosplace.junit.sandbox.categories.IntegrationTestNoDBCategoryTestSuite" />
+      <test todir="${test.reports.dir}" 
+        name="net.catosplace.junit.sandbox.categories.ExperimentalCategoryTestSuite" />
 		</junit>
-
+	  
+	  <junitreport todir="${test.reports.dir}">
+	    <fileset dir="${test.reports.dir}">
+	      <include name="TEST-*.xml"/>
+	    </fileset>
+	    <report format="frames" todir="${test.reports.html.dir}"/>
+	  </junitreport>
+	  
+	  <fail message="Tests failed. Check log and/or reports."
+	    if="test.failed"/>
+	  
 	</target>
 
 </project>
