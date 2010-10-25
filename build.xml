@@ -54,8 +54,8 @@
 	<target name="clean" description="Deletes generated directories">
 
 		<delete dir="${build.dir}" />
-                <delete dir="${test.dir}" />
-		<delete dir="${test.report.dir}"/>
+                <delete dir="${tests.dir}" />
+		<delete dir="${test.reports.dir}"/>
 	</target>
 
 
@@ -90,7 +90,7 @@
 	<!-- - - - - - - - - - - - - - - - - - 
           target: init                      
          - - - - - - - - - - - - - - - - - -->
-	<target name="init">
+	<target name="init" depends="clean">
 
 		<mkdir dir="${build.classes.dir}" />
 		<mkdir dir="${test.classes.dir}" />
