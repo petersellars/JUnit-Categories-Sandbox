@@ -54,7 +54,6 @@
 	<target name="clean" description="Deletes generated directories">
 
 		<delete dir="${build.dir}" />
-                <delete dir="${tests.dir}" />
 		<delete dir="${test.reports.dir}"/>
 	</target>
 
