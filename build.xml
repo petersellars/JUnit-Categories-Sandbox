@@ -120,7 +120,9 @@
       <test todir="${test.reports.dir}" 
         name="net.catosplace.junit.sandbox.categories.IntegrationTestNoDBCategoryTestSuite" />
       <test todir="${test.reports.dir}" 
-        name="net.catosplace.junit.sandbox.categories.ExperimentalCategoryTestSuite" />
+        name="net.catosplace.junit.sandbox.categories.DBIntegrationCategoriesTestSuite" />
+      <test todir="${test.reports.dir}" 
+        name="net.catosplace.junit.sandbox.categories.IntegrationWithoutDBCategoriesTestSuite" />
 		</junit>
 	  
 	  <junitreport todir="${test.reports.dir}">

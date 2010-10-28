@@ -11,8 +11,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @ExcludeCategory(DBIntegrationTests.class)
 @SuiteClasses( { NoClassCategoryTest.class,
 				 ClassCategoryTest.class,
-				 IntegrationClassCategoryTest.class,
-				 MethodCategoryTest.class } )
+				 IntegrationClassCategoryTest.class, 
+				 MethodCategoryTest.class } ) 
 public class IntegrationTestNoDBCategoryTestSuite {
 
 }
